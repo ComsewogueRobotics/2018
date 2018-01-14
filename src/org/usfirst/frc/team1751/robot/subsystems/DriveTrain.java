@@ -1,6 +1,7 @@
 package org.usfirst.frc.team1751.robot.subsystems;
 
 import org.usfirst.frc.team1751.robot.RobotMap;
+import org.usfirst.frc.team1751.robot.commands.Drive;
 
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
@@ -27,6 +28,7 @@ public class DriveTrain extends Subsystem {
 		//m_right = new SpeedControllerGroup(right_M1, right_M2);
 		//DiffDrive = new DifferentialDrive(m_left, m_right);
 		DiffDrive2 = new DifferentialDrive(left_M1,left_M2);
+		DiffDrive2.setSafetyEnabled(false);
 	}
 	
 	public void arcadeDrive (double move, double turn, boolean squaredInputs){
@@ -39,6 +41,8 @@ public class DriveTrain extends Subsystem {
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
+    	setDefaultCommand(new Drive());
+    	
     }
 }
 
