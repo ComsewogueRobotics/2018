@@ -18,7 +18,6 @@ public class DriveTrain extends Subsystem {
 	private DifferentialDrive DiffDrive2;
 	//private SpeedControllerGroup m_left;
 	//private SpeedControllerGroup m_right;
-	
 	public DriveTrain(){
 		left_M1 = new WPI_TalonSRX(RobotMap.D_LEFT_1);
 		left_M2 = new WPI_TalonSRX(RobotMap.D_LEFT_2);
