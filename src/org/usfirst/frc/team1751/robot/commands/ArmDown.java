@@ -1,5 +1,6 @@
 package org.usfirst.frc.team1751.robot.commands;
 
+import org.usfirst.frc.team1751.robot.Robot;
 import org.usfirst.frc.team1751.robot.subsystems.Arm;
 
 import edu.wpi.first.wpilibj.command.Command;
@@ -17,11 +18,11 @@ public class ArmDown extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	Robot.arm.setArm(.2);
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    		Arm.setArm(-.2);
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -31,7 +32,7 @@ public class ArmDown extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
-    		Arm.setArm(0);
+    		Robot.arm.setArm(0);
     }
 
     // Called when another command which requires one or more of the same

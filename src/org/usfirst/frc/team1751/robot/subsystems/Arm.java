@@ -35,7 +35,7 @@ public class Arm extends Subsystem {
         //setDefaultCommand(new MySpecialCommand());
     }
     
-    public static void setArm(double speed) {
+    public void setArm(double speed) {
     		arm.set(speed);
     }
     

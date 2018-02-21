@@ -1,5 +1,6 @@
 package org.usfirst.frc.team1751.robot.commands;
 
+import org.usfirst.frc.team1751.robot.Robot;
 import org.usfirst.frc.team1751.robot.subsystems.Arm;
 
 import edu.wpi.first.wpilibj.SpeedController;
@@ -18,7 +19,7 @@ public class ArmUp extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    		Arm.setArm(1);
+    		Robot.arm.setArm(-1);
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -32,7 +33,7 @@ public class ArmUp extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
-    		Arm.setArm(0);
+    		Robot.arm.setArm(0);
     }
 
     // Called when another command which requires one or more of the same
