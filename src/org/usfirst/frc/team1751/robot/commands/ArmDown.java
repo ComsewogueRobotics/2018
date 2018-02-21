@@ -9,12 +9,10 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 public class ArmDown extends Command {
 	
-	private int joint;
 
-    public ArmDown(int j) {
+    public ArmDown() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-    		joint = j;
     }
 
     // Called just before this Command runs the first time
@@ -23,12 +21,7 @@ public class ArmDown extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    		if (joint == 1) {
-    			Arm.set_j1(-0.5);
-    		}
-    		if (joint == 2) {
-    			Arm.set_j2(-0.5);
-    		}
+    		Arm.setArm(-.2);
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -38,12 +31,7 @@ public class ArmDown extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
-    	if (joint == 1) {
-			Arm.set_j1(0);
-		}
-		if (joint == 2) {
-			Arm.set_j2(0);
-		}
+    		Arm.setArm(0);
     }
 
     // Called when another command which requires one or more of the same

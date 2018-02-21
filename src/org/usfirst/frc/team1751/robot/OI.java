@@ -9,6 +9,8 @@ package org.usfirst.frc.team1751.robot;
 
 import org.usfirst.frc.team1751.robot.commands.ArmDown;
 import org.usfirst.frc.team1751.robot.commands.ArmUp;
+import org.usfirst.frc.team1751.robot.commands.GrabberIn;
+import org.usfirst.frc.team1751.robot.commands.GrabberOut;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
@@ -49,22 +51,22 @@ public class OI {
 	
 	private Joystick drivestick;
 	private Joystick armstick;
-	private Button armUp_j1;
-	private Button armDown_j1;
-	private Button armUp_j2;
-	private Button armDown_j2;
+	private Button armUp;
+	private Button armDown;
+	private Button grabberIn;
+	private Button grabberOut;
 	
 	public OI(){
 		drivestick = new Joystick(RobotMap.DRIVE_STICK);
 		armstick = new Joystick(RobotMap.ARM_STICK);
-		armUp_j1 = new JoystickButton(armstick, RobotMap.B_ARMUP_J1);
-		armDown_j1 = new JoystickButton(armstick, RobotMap.B_ARMDOWN_J1);
-		armUp_j2 = new JoystickButton(armstick, RobotMap.B_ARMUP_J2);
-		armDown_j2 = new JoystickButton(armstick, RobotMap.B_ARMDOWN_J2);
-		armUp_j1.whileHeld(new ArmUp(1));
-		armUp_j2.whileHeld(new ArmUp(2));
-		armDown_j1.whileHeld(new ArmDown(1));
-		armDown_j2.whileHeld(new ArmDown(2));
+		armUp = new JoystickButton(armstick, RobotMap.B_ARMUP);
+		armDown = new JoystickButton(armstick, RobotMap.B_ARMDOWN);
+		grabberIn = new JoystickButton(armstick, RobotMap.B_GRABBERIN);
+		grabberOut = new JoystickButton(armstick, RobotMap.B_GRABBEROUT);
+		armUp.whileHeld(new ArmUp());
+		armDown.whileHeld(new ArmDown());
+		grabberIn.whileHeld(new GrabberIn());
+		grabberOut.whileHeld(new GrabberOut());
 	}
 	
 	public Joystick getDriveStick(){

@@ -2,23 +2,21 @@ package org.usfirst.frc.team1751.robot.commands;
 
 import org.usfirst.frc.team1751.robot.subsystems.Arm;
 
-import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
  */
-public class ArmUp extends Command {
-	
+public class GrabberOut extends Command {
 
-    public ArmUp() {
+    public GrabberOut() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    		Arm.setArm(1);
+    		Arm.setGrabber(-1);
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -32,7 +30,7 @@ public class ArmUp extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
-    		Arm.setArm(0);
+    		Arm.setGrabber(0);
     }
 
     // Called when another command which requires one or more of the same
