@@ -12,6 +12,8 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
+import org.usfirst.frc.team1751.robot.commands.Auto_CrossBaseline;
 import org.usfirst.frc.team1751.robot.commands.ExampleCommand;
 import org.usfirst.frc.team1751.robot.subsystems.Arm;
 import org.usfirst.frc.team1751.robot.subsystems.DriveTrain;
@@ -41,7 +43,7 @@ public class Robot extends TimedRobot {
 	@Override
 	public void robotInit() {
 		oi = new OI();
-		//chooser.addDefault("Default Auto", new ExampleCommand());
+		chooser.addDefault("Cross Baseline", new Auto_CrossBaseline());
 		// chooser.addObject("My Auto", new MyAutoCommand());
 		SmartDashboard.putData("Auto mode", chooser);
 	}

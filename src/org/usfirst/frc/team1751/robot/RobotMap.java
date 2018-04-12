@@ -32,6 +32,7 @@ public class RobotMap {
 	public static final int B_ARMDOWN = 2;
 	public static final int B_GRABBERIN = 1;
 	public static final int B_GRABBEROUT = 4;
+	public static final int B_CUBEDELIVEREY = 5;
 	// For example to map the left and right motors, you could define the
 	// following variables to use with your drivetrain subsystem.
 	// public static int leftMotor = 1;

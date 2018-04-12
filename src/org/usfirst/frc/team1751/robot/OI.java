@@ -9,6 +9,7 @@ package org.usfirst.frc.team1751.robot;
 
 import org.usfirst.frc.team1751.robot.commands.ArmDown;
 import org.usfirst.frc.team1751.robot.commands.ArmUp;
+import org.usfirst.frc.team1751.robot.commands.CubeDelivery;
 import org.usfirst.frc.team1751.robot.commands.GrabberIn;
 import org.usfirst.frc.team1751.robot.commands.GrabberOut;
 
@@ -55,6 +56,7 @@ public class OI {
 	private Button armDown;
 	private Button grabberIn;
 	private Button grabberOut;
+	private Button deliverCube;
 	
 	public OI(){
 		drivestick = new Joystick(RobotMap.DRIVE_STICK);
@@ -63,10 +65,12 @@ public class OI {
 		armDown = new JoystickButton(armstick, RobotMap.B_ARMDOWN);
 		grabberIn = new JoystickButton(armstick, RobotMap.B_GRABBERIN);
 		grabberOut = new JoystickButton(armstick, RobotMap.B_GRABBEROUT);
+		deliverCube = new JoystickButton(armstick, RobotMap.B_CUBEDELIVEREY);
 		armUp.whileHeld(new ArmUp());
 		armDown.whileHeld(new ArmDown());
 		grabberIn.whileHeld(new GrabberIn());
 		grabberOut.whileHeld(new GrabberOut());
+		deliverCube.whenPressed(new CubeDelivery());
 	}
 	
 	public Joystick getDriveStick(){
