@@ -17,12 +17,13 @@ public class RobotMap {
 	
 	public static final int D_LEFT_1 = 1;
 	public static final int D_LEFT_2 = 2;
-	//public static final int D_RIGHT_1 = 4;
-	//public static final int D_RIGHT_2 = 5;
+	public static final int D_RIGHT_1 = 4;
+	public static final int D_RIGHT_2 = 5;
 	
 	public static final int ARM_M1 = 5;
 	public static final int ARM_M2 = 6;
-	public static final int M_GRABBER = 1;
+	public static final int GRABBER_M1 = 1;
+	public static final int GRABBER_M2 = 2;
 	
 	public static final int DRIVE_STICK = 0;
 	public static final int ARM_STICK = 1;

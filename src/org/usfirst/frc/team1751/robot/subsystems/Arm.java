@@ -20,14 +20,17 @@ public class Arm extends Subsystem {
 	private static SpeedController arm_m1;
 	private static SpeedController arm_m2;
 	private static SpeedControllerGroup arm;
-	
-	private static SpeedController grabber;
+	private static SpeedController grabber_m1;
+	private static SpeedController grabber_m2;
+	private static SpeedControllerGroup grabber;
 	
 	public Arm() {
 		arm_m1 = new WPI_TalonSRX(RobotMap.ARM_M1);
 		arm_m2 = new WPI_TalonSRX(RobotMap.ARM_M2);
 		arm = new SpeedControllerGroup(arm_m1, arm_m2);
-		grabber = new Spark(RobotMap.M_GRABBER);
+		grabber_m1 = new Spark(RobotMap.GRABBER_M1); //check whether it is spark or talon
+		grabber_m2 = new Spark(RobotMap.GRABBER_M2); //check whether it is spark or talon
+		grabber = new SpeedControllerGroup(grabber_m1, grabber_m2);
 	}
 
     public void initDefaultCommand() {
